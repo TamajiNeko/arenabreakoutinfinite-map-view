@@ -20,6 +20,8 @@
     --fw6: 600;
 
     --c54324: #c54324;
+    --c343434: #343434;
+    --c666666: #666666;
 }
 
 body {
@@ -81,4 +83,68 @@ body {
 
 .ro-180 {
     transform: rotate(180deg);
+}
+
+.zoom-bar {
+    z-index: 99;
+    right: 0;
+    bottom: 50%;
+    display: flex;
+    position: fixed;
+    transform: translate(25%, 50%) rotate(-90deg);
+    width: 250px;
+    background-color: #080808;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px var(--c666666) solid;
+    color: white;
+    text-align: center;
+}
+
+.zoom-bar input[type="range"] {
+    width: 100%;
+    background-color: var(--c343434);
+    -webkit-appearance: none;
+    height: 2px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.zoom-bar input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    box-shadow: 
+        0 0 0 3px #080808, /* Neutral zone (8px-10px) */
+        0 0 0 4px #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.zoom-bar p {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    height: 22px;
+    transform: rotate(90deg);
+    padding: 5px 8px;
+}
+
+.container {
+    z-index: 0;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.map {
+    position: absolute;
+    width: 50%;
 }
