@@ -17,45 +17,22 @@
             <a href="#">Support</a>
         </ul>
     </div>
+
     <div class="zoom-bar">
         <p>-</p>
         <input type="range" id="zoom-slider" min="1" max="3" step="0.1" value="1">
         <p>+</p>
     </div>
-    <div class="container">
-        <img class="map" id="map" src="Assets/map.jpg">
+
+    <div class="map-container">
+        <img id="map" src="Assets/map.png">
     </div>
-    <script>
-        function toggleSidebar() {
-            let sidebar = document.getElementById("top-side");
-            let icon = document.getElementById("toggle-btn")
-            sidebar.classList.toggle("active");
-            icon.classList.toggle("ro-180")
-        }
-    </script>
-    <script>
-        const zoomSlider = document.getElementById('zoom-slider');
-        const map = document.getElementById('map');
 
-        zoomSlider.addEventListener('input', zoomMap);
+    <div id="floor-select">
+        <p id="fs-p1" class="fs-p">TV Station 1F</p>
+        <p id="fs-p2" class="fs-p">TV Station 2F</p>
+    </div>
 
-        function zoomMap() {
-            const scaleValue = zoomSlider.value;
-            map.style.transform = `scale(${scaleValue})`;
-        }
-
-        window.addEventListener('wheel', function(event) {
-
-        let change = event.deltaY < 0 ? 0.1 : -0.1;
-    
-        let newValue = parseFloat(zoomSlider.value) + change;
-        newValue = Math.min(Math.max(newValue, zoomSlider.min), zoomSlider.max);
-
-        zoomSlider.value = newValue;
-        zoomMap();
-
-    });
-
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

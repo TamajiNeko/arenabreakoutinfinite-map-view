@@ -13,6 +13,8 @@
 }
 
 :root {
+    --fz5: 0.5rem;
+    --fz10: 1rem;
     --fz15: 1.5rem;
     --fz20: 2rem;
 
@@ -73,7 +75,6 @@ body {
 
 .top ul a:hover ,.top ul i:hover{
     color: var(--c54324);
-    font-weight: var(--fw6);
     border-left-color: var(--c54324)
 }
 
@@ -114,8 +115,8 @@ body {
 .zoom-bar input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
     background-color: white;
     box-shadow: 
         0 0 0 3px #080808, /* Neutral zone (8px-10px) */
@@ -134,7 +135,7 @@ body {
     padding: 5px 8px;
 }
 
-.container {
+.map-container {
     z-index: 0;
     align-items: center;
     justify-content: center;
@@ -144,7 +145,36 @@ body {
     height: 100%;
 }
 
-.map {
+#map {
     position: absolute;
-    width: 50%;
+    height: 75%;
+}
+
+#floor-select {
+    left: 5rem;
+    bottom: 5rem;
+    position: fixed;
+    color: #a0a0a0;
+    text-decoration: none;
+    font-family: 'rf-deluxe', Helvetica;
+    font-size: var(--fz15);
+    font-weight: var(--fw5);
+}
+
+.fs-p:first-of-type {
+    color: var(--c54324);
+}
+
+.fs-p:last-of-type::after {
+    content: '';
+    position: absolute;
+    bottom: 2.25rem;
+    left: -0.1rem;
+    width: 110%;
+    height: 2.5px;
+    background: linear-gradient(to right, rgba(110, 110, 110, 0.45), rgba(255, 255, 255, 0));
+}
+
+.fs-p:last-of-type {
+    padding-top: 1.5rem;
 }
