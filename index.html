@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABI TV Station Map</title>
+    <link rel="icon" href="Assets/icon.ico" type="image/icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top" style="top: 1rem">
+        <img class="logo" src="Assets/Logo.png">
+        <ul id="top-side">
+            <i id="toggle-btn" onclick="toggleSidebar()"></i>
+            <a target="_blank" href="https://www.arenabreakoutinfinite.com">Official Website</a>
+            <a href="#">GitHub</a>
+            <a href="#">Support</a>
+        </ul>
+    </div>
+    <script>
+        function toggleSidebar() {
+            let sidebar = document.getElementById("top-side");
+            let icon = document.getElementById("toggle-btn")
+            sidebar.classList.toggle("active");
+            icon.classList.toggle("ro-180")
+        }
+    </script>
+</body>
+</html>

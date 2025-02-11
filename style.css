@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+@font-face {
+    font-family: 'rf-deluxe';
+    src: url(Assets/Refrigerator\ Deluxe.otf) format('opentype');
+    font-style: normal;
+}
+
+:root {
+    --fz15: 1.5rem;
+    --fz20: 2rem;
+
+    --fw5: 500;
+    --fw6: 600;
+
+    --c54324: #c54324;
+}
+
+body {
+    background-image: url(Assets/Background.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.top {
+    position: fixed;
+    display: flex;
+    top: 0.2rem;
+    width: 100%;
+    top: 0;
+    padding: 0 2rem;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo {
+    width: 10vw;
+}
+
+.top ul {
+    position: relative;
+    transition: transform 0.25s ease-in-out;
+}
+
+.top ul a{
+    padding-left: 1.5rem;
+    color: white;
+    text-decoration: none;
+    font-family: 'rf-deluxe', Helvetica;
+    font-size: var(--fz15);
+    font-weight: var(--fw5);
+}
+
+.top ul i{
+    width: 0;
+    height: 0;
+    display: inline-block;
+    border: 0.4em solid transparent;
+    border-left-color: white;
+    cursor: pointer;
+    transition: transform 0.25s ease-in-out;
+}
+
+.top ul a:hover ,.top ul i:hover{
+    color: var(--c54324);
+    font-weight: var(--fw6);
+    border-left-color: var(--c54324)
+}
+
+.active {
+    transform: translateX(320px);
+}
+
+.ro-180 {
+    transform: rotate(180deg);
+}
